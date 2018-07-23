@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+</head>
+<body>
+
+<div id="app">
+    <h1>v-text: Hello
+        <span v-text="textname"></span>
+    </h1>
+    <h1>v-html: Hello
+        <span v-html="htmlname"></span>
+    </h1>
+    <h1>v-show: Hello
+        <span v-show="visible" v-html="htmlname"></span>
+    </h1>
+    <h1>v-if: Hello
+        <span v-if="ifvalue > 5">value가 5보다 크군요.</span>
+    </h1>
+</div>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script src="02_app.js"></script>
+
+</body>
+</html>
