@@ -6,6 +6,6 @@ var app = new Vue({
         textname: 'Vue',
         htmlname: '<i>이탈릭</i>',
         visible: 'true',
-        ifvalue: 0
+        ifvalue: 1
     }
 });

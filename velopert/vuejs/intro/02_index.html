@@ -23,6 +23,10 @@
         <span v-else-if="ifvalue === 5">값이 5네요</span>
         <span v-else>value가 5보다 작아요.</span>
     </h1>
+    <h1>v-once: Hello
+        <span v-once>초기값: {{ ifvalue }}</span>
+        <span>현재 값 : {{ ifvalue }}</span>
+    </h1>
     <h1>v-pre: Hello
         <span v-pre>{{ 이거 그대로 렌더링해줘요. }}</span>
     </h1>
