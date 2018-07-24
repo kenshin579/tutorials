@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="02_styles.css">
     <title>JS Bin</title>
 </head>
 <body>
 
-<div id="app">
+<div id="app" v-cloak>
     <h1>v-text: Hello
         <span v-text="textname"></span>
     </h1>
@@ -19,6 +20,11 @@
     </h1>
     <h1>v-if: Hello
         <span v-if="ifvalue > 5">value가 5보다 크군요.</span>
+        <span v-else-if="ifvalue === 5">값이 5네요</span>
+        <span v-else>value가 5보다 작아요.</span>
+    </h1>
+    <h1>v-pre: Hello
+        <span v-pre>{{ 이거 그대로 렌더링해줘요. }}</span>
     </h1>
 </div>
 
