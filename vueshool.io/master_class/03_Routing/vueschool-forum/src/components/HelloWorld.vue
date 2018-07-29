@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="col-full">
     <h1>Welcome to the Forum</h1>
    <ThreadList :threads="this.threads"/>
   </div>

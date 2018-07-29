@@ -5,17 +5,16 @@
         <a href="#">{{thread.title}}</a>
       </p>
       <p class="text-faded text-xsmall">
-        By <a href="#">Joseph Kerr</a>, {{thread.publishedAt}}.
+        By <a href="#">{{user}}</a>, {{thread.publishedAt}}.
       </p>
     </div>
 
     <div class="activity">
       <p class="replies-count">
-        1 reply
+        {{repliesCount}} replies
       </p>
 
-      <img class="avatar-medium"
-           src="http://i0.kym-cdn.com/photos/images/facebook/000/010/934/46623-batman_pikachu_super.png" alt="">
+      <!--<img class="avatar-medium" src="http://i0.kym-cdn.com/photos/images/facebook/000/010/934/46623-batman_pikachu_super.png" alt="">-->
 
       <!--<div>-->
       <!--<p class="text-xsmall">-->
@@ -28,12 +27,21 @@
 </template>
 
 <script>
+  import sourceData from '@/data'
   export default {
     name: 'ThreadListItem',
     props: {
       thread: {
         required: true,
         type: Object
+      }
+    },
+    computed: {
+      repliesCount () {
+        return Object.keys(this.thread.posts).length - 1
+      },
+      user () {
+        return sourceData.users[this.thread.userId].name
       }
     }
   }
