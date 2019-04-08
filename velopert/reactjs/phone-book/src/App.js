@@ -36,6 +36,17 @@ class App extends Component {
         })
     };
 
+    handleUpdate = (id, data) => {
+        const {information} = this.state;
+        this.setState({
+            information: information.map(
+                info => id === info.id
+                    ? {...info, ...data} // 새 객체를 만들어서 기존의 값과 전달받은 data을 덮어씀
+                    : info // 기존의 값을 그대로 유지
+            )
+        })
+    };
+
     render() {
         const {information} = this.state;
 
@@ -44,7 +55,9 @@ class App extends Component {
                 <PhoneForm onCreate={this.handleCreate}/>
                 <PhoneInfoList
                     data={this.state.information}
-                    onRemove={this.handleRemove}/>
+                    onRemove={this.handleRemove}
+                    onUpdate={this.handleUpdate} //handleUpdate 함수는 PhoneInfoList에 전달됨
+                />
             </div>
         );
     }
