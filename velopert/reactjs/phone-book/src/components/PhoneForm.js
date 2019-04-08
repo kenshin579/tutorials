@@ -2,8 +2,9 @@ import React, {Component} from 'react';
 
 class PhoneForm extends Component {
     state = {
+        id: 0,
         name: '',
-        phone: ''
+        phone: '',
     };
 
     handleChange = (e) => {
