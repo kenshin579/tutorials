@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router';
 import './Header.css';
 
 const MenuItem = ({active, children, to}) => (
-    <div className="menu-item">
+    <Link to={to} className="menu-item">
         {children}
-    </div>
+    </Link>
 )
 
 const Header = () => {
@@ -14,9 +15,9 @@ const Header = () => {
                 velopert
             </div>
             <div className="menu">
-                <MenuItem>홈</MenuItem>
-                <MenuItem>소개</MenuItem>
-                <MenuItem>포스트</MenuItem>
+                <MenuItem to={'/'}>홈</MenuItem>
+                <MenuItem to={'/about'}>소개</MenuItem>
+                <MenuItem to={'/post'}>포스트</MenuItem>
             </div>
         </div>
     );
