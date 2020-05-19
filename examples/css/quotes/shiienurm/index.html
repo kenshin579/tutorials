@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<!--https://codepen.io/governorfancypants/pen/elsDc-->
+<div class="container">
+    <div class="card-carousel">
+        <header>
+            <span id="pagination-count" class="pagination-count">25 of 56</span>
+            <span class="view"></span>
+            <span id="heart" class="heart"></span>
+        </header>
+        <div id="twentyfive" class="content-wrapper twentyfive">
+            <div class="content">
+                <p class="quote">Details matter, it's worth waiting to get it right.</p>
+                <name class="author">- Steve Jobs</name>
+            </div>
+        </div>
+        <div id="twentysix" class="content-wrapper twentysix">
+            <div class="content">
+                <p class="quote">He not busy being born is busy dying.</p>
+                <name class="author">- Bob Dylan</name>
+            </div>
+        </div>
+    </div>
+    <span id="hearted" class="hearted"></span>
+    <div class="pagination">
+        <span id="prev" class="prev"></span>
+        <span id="next" class="next"></span>
+    </div>
+    <div class="avatar">
+        <img class="twentyfive" src="http://i102.photobucket.com/albums/m104/GovernorFancyPants/Codepen/steve_jobs_zpsb8899f6c.png" alt="" width="200" />
+        <img src="http://i102.photobucket.com/albums/m104/GovernorFancyPants/Codepen/bob_dylan_zps13c80b3d.jpg" alt="" class="twentysix" />
+    </div>
+</div>
+<script>
+    var pagPrev = document.getElementById("prev"),
+        pagNext = document.getElementById("next"),
+        pagCount = document.getElementById("pagination-count"),
+        heart = document.getElementById("heart");
+
+    next.addEventListener("click", function() {
+        slide();
+    }, false);
+    prev.addEventListener("click", function() {
+        slide();
+    }, false);
+    heart.addEventListener("click", function() {
+        document.body.className += " like";
+        setTimeout( function() {
+            document.body.className = "";
+        }, 1000 );
+    }, false);
+
+    function slide() {
+        if (document.body.classList.contains("slide")) {
+            document.body.className = "";
+            pagCount.textContent = "25 of 56"
+        } else {
+            document.body.className += " slide";
+            pagCount.textContent = "26 of 56"
+        }
+    }
+</script>
+</body>
+</html>
